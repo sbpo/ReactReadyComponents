@@ -1,5 +1,4 @@
 import React, { useState, useRef, useEffect } from "react";
-import { Icon } from "antd";
 
 interface Props {
   className?: string;

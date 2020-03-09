@@ -1,6 +1,6 @@
-import React, { Component, useRef, useState, useEffect } from "react";
-import { useClickOutsideEffect } from "utils/useClickOutside";
-import { useMaxHeightTransition } from "utils/useMaxHeightTransition";
+import React, { useRef } from "react";
+import { useClickOutsideEffect } from "components/utility/useClickOutside";
+import { useMaxHeightTransition } from "components/utility/useMaxHeightTransition";
 
 type Option = { id: string; display: string; val?: any };
 
@@ -27,7 +27,6 @@ const Dropdown: React.FC<Props> = ({
   const { open, setOpen, style } = useMaxHeightTransition("0", "240px");
 
   useClickOutsideEffect(ref, () => {
-    // close();
     setOpen(false);
   });
 
@@ -59,7 +58,6 @@ const Dropdown: React.FC<Props> = ({
           className={`rounded border border-gray-200 shadow-lg overflow-hidden overflow-y-scroll absolute w-full  left-0 overflow-auto  z-10 bg-white
             ${flipped ? "bottom-0 mb-8" : "top-0 mt-8"}
           `}
-          // style={{ maxHeight: maxHeight, transition: "max-height 5s ease-in" }}
           style={style}
         >
           {options.length > 0 ? (
@@ -69,7 +67,6 @@ const Dropdown: React.FC<Props> = ({
                 key={option.id}
                 onClick={() => {
                   onSelect(option);
-                  // close();
                   setOpen(false);
                 }}
               >
