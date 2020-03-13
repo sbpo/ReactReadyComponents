@@ -5,7 +5,7 @@ import InfoTag from "components/basic/InfoTag";
 
 const App = () => {
   return (
-    <div className="w-screen h-screen flex">
+    <div className="w-screen h-screen">
       <div className="text-4xl italic">My custom components</div>
       <LoadingIcon />
       <InfoTag>Hello content...</InfoTag>
